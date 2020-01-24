@@ -19,11 +19,11 @@ def books_set_read(book_id):
   
     return redirect(url_for("books_index"))
 
-@app.route("/books/", methods=["POST"]) #tehty POST-pyyntö lisää uuden tehtävän pyynnössä lähetetyn lomakkeen perusteella
+@app.route("/books/", methods=["POST"])
 def books_create():
     t = Book(request.form.get("name"))
 
     db.session().add(t)
     db.session().commit()
-
-    return redirect(url_for("books_index")) #uudelleenohjataan sivulle, missä tehtävät listataan
+  
+    return redirect(url_for("books_index"))

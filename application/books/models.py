@@ -7,7 +7,7 @@ class Book(db.Model):
     onupdate=db.func.current_timestamp())
 
     name = db.Column(db.String(144), nullable=False)
-    read = db.Column(db.Boolean, nullable=False) #onko kirja luettu
+    read = db.Column(db.Boolean, nullable=False)
 
     def __init__(self, name):
         self.name = name
