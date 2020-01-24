@@ -7,3 +7,5 @@ Sovelluksessa voi arvostella kirjoja. Käyttäjä luo käyttäjän ja voi lisät
 [Tietokantakaavio](https://github.com/NiinaM/Kirja-arvosteluSovellus/blob/master/documentation/Tietokantakaavio%201.jpg)
 
 [Dokumentaatio](https://github.com/NiinaM/Kirja-arvosteluSovellus/tree/master/documentation)
+
+[Heroku](https://kirjaarvostelusovellus.herokuapp.com/)
