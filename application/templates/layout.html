@@ -6,14 +6,24 @@
   </head>
   
   <body>
-    <ul>
-<li><a href="{{ url_for('books_index') }}">List books</a></li>
-<li><a href="{{ url_for('books_form') }}">Add a book</a></li>
-    </ul>
+    {% if current_user.is_authenticated %}
+    <p>
+      Kirjautunut nimellä {{ current_user.name }}. <a href="{{ url_for('auth_logout') }}">Kirjaudu ulos</a>
+    </p>
+    {% else %}
+    <a href="{{ url_for('auth_login') }}">Kirjaudu</a>
+    {% endif %}
     
+    <ul>
+      <li><a href="{{ url_for('books_index') }}">Listaa kirjat</a></li>
+      <li><a href="{{ url_for('books_form') }}">Lisää kirja</a></li>
+    </ul>
+    <ul>
+      <li><a href="{{ url_for('auth_form') }}">Luo uusi tunnus</a></li>
+    </ul>
     {% block body %}
     <p>
-Content.
+      Content.
     </p>
     {% endblock %}
   </body>
