@@ -38,5 +38,5 @@ def books_create():
 
     db.session().add(t)
     db.session().commit()
-  
+
     return redirect(url_for("books_index"))
