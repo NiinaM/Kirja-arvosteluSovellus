@@ -11,6 +11,9 @@ Sovelluksessa voi arvostella kirjoja. Käyttäjä luo käyttäjän ja voi lisät
 
 ![Tietokantakaavio](https://github.com/NiinaM/Kirja-arvosteluSovellus/blob/master/documentation/Tietokantakaavio%202.jpg)
 
+
+### Linkkejä
+
 [Käyttötapauksia](https://github.com/NiinaM/Kirja-arvosteluSovellus/blob/master/documentation/userstory.md)
 
 [Dokumentaatio](https://github.com/NiinaM/Kirja-arvosteluSovellus/tree/master/documentation)

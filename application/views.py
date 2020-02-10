@@ -2,6 +2,6 @@ from flask import render_template # views.py ohjeistaa Flaskia käsittelemään 
 from application import app
 from application.auth.models import User
 
-@app.route('/')
+@app.route("/")
 def index():
     return render_template("index.html", needs_books=User.find_users_with_nothing_to_read())
