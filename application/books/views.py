@@ -19,10 +19,10 @@ def books_form():
 def books_set_read(book_id):
 
     t = Book.query.get(book_id)
-    t.read = True
+    t.read = not t.read
     db.session().commit()
   
-    return redirect(url_for("books_index"))
+    return redirect(url_for("book_view", book_id = t.id))
     #voisi merkata itselleen luetuksi, muttei muille?
     #toinen nappi, josta voi merkata lukemattomaksi -> samaan nappiin.
 
@@ -42,7 +42,6 @@ def books_create():
 
     return redirect(url_for("books_index"))
 
-#en ole varma onko kirjalla tarpeellista olla poistamismetodia tai ainakin sen pitäis varmaan lopulta olla sellainen, että vain sellaiset kirjat voi poistaa joissa ei ole arvostelua.
 @app.route("/books/", methods=["POST"])
 @login_required
 def book_delete(book_id):

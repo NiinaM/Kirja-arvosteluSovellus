@@ -3,20 +3,13 @@
 {% block body %}
   <table>
     <tr>
-      <th>Book</th>
-      <th>Read</th>
+      <th style="font-size: 20pt; color: darkviolet;">Kirjat</th>
       <th></th>
     </tr>
     {% for book in books %}
     <tr>
       <td>
-        <a href="{{ url_for('book_view', book_id=book.id) }}">{{ book.name }}</a>
-      </td>
-      <td>{{ book.read }}</td>
-      <td>
-	      <form method="POST" action="{{ url_for('books_set_read', book_id=book.id) }}">
-	      <input type="submit" value="Change status!"/>
-	      </form>
+        <a href="{{ url_for('book_view', book_id=book.id) }}" style="color: hotpink;">{{ book.name }}</a>
       </td>
     </tr>
     {% endfor %}
