@@ -21,9 +21,14 @@ Sovelluksessa voi arvostella kirjoja. Käyttäjä luo käyttäjän ja voi lisät
 [Heroku](https://kirjaarvostelusovellus.herokuapp.com/)
 
 
-### Käyttöohje
+### Asennusohje
 
 1. Lataa repositorio tai kloonaa se
 2. Asenna tarvittavat riippuvuudet: 
     ```pip install requirements.txt```
 3. Aja ohjelma komennolla: ```python run.py```
+
+### Käyttöohje
+
+* Sovelluksessa voi luoda käyttäjän painamalla "Luo uusi tunnus"-linkkiä ja kirjautua voi painamalla "Kirjaudu"-linkkiä. Ulos voi kirjautua painamalla uloskirjautumislinkkiä.
+* Sovelluksessa olevat kirjat näkee "Listaa kirjat"- linkin kautta ja sovellukseen voi luoda uuden kirjan "Lisää kirja"- linkin kautta. 
