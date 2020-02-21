@@ -9,10 +9,12 @@ from application.reviews.forms import ReviewForm
 def reviews_index():
     return render_template("reviews/list.html", reviews = Review.query.all())
 
-@app.route("/reviews/new/")
+@app.route("/reviews/new")
 @login_required
 def reviews_form():
-    return render_template("reviews/new.html", form = ReviewForm())
+    book_id = request.args.get("book_id")
+
+    return render_template("reviews/new.html", form = ReviewForm(book_id))
 
 @app.route("/reviews", methods=["POST"])
 @login_required
@@ -22,7 +24,7 @@ def reviews_create():
     if not form.validate():
         return render_template("reviews/new.html", form = form)
 
-    newReview = Review(form.rating.data, form.reviewText.data)
+    newReview = Review(form.rating.data, form.reviewText.data, current_user.account_id)
     
     db.session().add(newReview)
     db.session().commit()

@@ -19,3 +19,11 @@ Sovelluksessa voi arvostella kirjoja. Käyttäjä luo käyttäjän ja voi lisät
 [Dokumentaatio](https://github.com/NiinaM/Kirja-arvosteluSovellus/tree/master/documentation)
 
 [Heroku](https://kirjaarvostelusovellus.herokuapp.com/)
+
+
+### Käyttöohje
+
+1. Lataa repositorio tai kloonaa se
+2. Asenna tarvittavat riippuvuudet: 
+    ```pip install requirements.txt```
+3. Aja ohjelma komennolla: ```python run.py```

@@ -4,6 +4,7 @@
     <h3 style="color:rgb(98, 89, 160)">{{ book.name }}</h3>
     <br />
     <br />
+    <a href="{{ url_for('reviews_form', book_id=book.id) }}">Kirjoita arvostelu.</a>
     <table>
         <tbody>
             <tr>
