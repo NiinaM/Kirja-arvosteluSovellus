@@ -1,6 +1,6 @@
 from application import db
 from application.models import Base, Name
-
+#kirjan luokka
 class Book(Base, Name):
 
     read = db.Column(db.Boolean, nullable=False)
