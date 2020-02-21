@@ -57,6 +57,7 @@ def book_delete(book_id):
 def book_view(book_id):
     book = Book.query.get(book_id)
     #mitä muuta?
+    print(book.reviews)
     return render_template(
         "books/book.html",
         book=book,
