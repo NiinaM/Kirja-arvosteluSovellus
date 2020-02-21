@@ -9,12 +9,14 @@
     </tr>
     {% for book in books %}
     <tr>
-      <td>{{ book.name }}</td>
+      <td>
+        <a href="{{ url_for('book_view', book_id=book.id) }}">{{ book.name }}</a>
+      </td>
       <td>{{ book.read }}</td>
       <td>
-	<form method="POST" action="{{ url_for('books_set_read', book_id=book.id) }}">
-	  <input type="submit" value="Change status!"/>
-	</form>
+	      <form method="POST" action="{{ url_for('books_set_read', book_id=book.id) }}">
+	      <input type="submit" value="Change status!"/>
+	      </form>
       </td>
     </tr>
     {% endfor %}

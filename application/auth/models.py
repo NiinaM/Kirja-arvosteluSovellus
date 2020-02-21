@@ -30,7 +30,12 @@ class User(Base, Name):
     def is_authenticated(self):
         return True
 
+    def roles(self):
+        return["ADMIN"]
+        #tällä hetkellä kaikki käyttäjät voivat muokata kaikkea
+        #sellainen rooli kaikille, että he voivat muokata omia tekemisiään mutteivät muiden?
 
+    #yhteenvetokyselyt pitäisi saada toimimaan herokussa!!!
     #@staticmethod
     #def find_users_with_nothing_to_read(read=0):
       #  stmt = text("SELECT Account.id, Account.name FROM Account"

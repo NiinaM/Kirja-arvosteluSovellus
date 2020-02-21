@@ -1,7 +1,7 @@
 from flask import redirect, render_template, request, url_for
-from flask_login import login_required, current_user
+from flask_login import current_user
 
-from application import app, db
+from application import app, db, login_required
 from application.books.models import Book
 from application.books.forms import BookForm
 
@@ -23,6 +23,8 @@ def books_set_read(book_id):
     db.session().commit()
   
     return redirect(url_for("books_index"))
+    #voisi merkata itselleen luetuksi, muttei muille?
+    #toinen nappi, josta voi merkata lukemattomaksi -> samaan nappiin.
 
 @app.route("/books/", methods=["POST"])
 @login_required
@@ -35,8 +37,28 @@ def books_create():
     t = Book(form.name.data)
     t.read = form.read.data
     t.account_id = current_user.id
-
     db.session().add(t)
     db.session().commit()
 
     return redirect(url_for("books_index"))
+
+#en ole varma onko kirjalla tarpeellista olla poistamismetodia tai ainakin sen pitäis varmaan lopulta olla sellainen, että vain sellaiset kirjat voi poistaa joissa ei ole arvostelua.
+@app.route("/books/", methods=["POST"])
+@login_required
+def book_delete(book_id):
+    book = Book.query.get(book_id)
+    if book.account_id != current_user.id:
+        #lopullinen tekeminen päättämättä
+        return login_manager.unauthorized()
+
+    db.session.delete(book)
+
+#jokaiselle kirjalle oma sivu
+@app.route("/books/<book_id>", methods=["GET"])
+def book_view(book_id):
+    book = Book.query.get(book_id)
+    #mitä muuta?
+    return render_template(
+        "books/book.html",
+        book=book,
+    )

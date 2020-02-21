@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h3 style="color:rgb(98, 89, 160)">{{ book.name }}</h3>
+    <br/>
+    <br/>
+    <th style="color: darkslateblue;">Merkkaa kirja luetuksi.</th>
+    &nbsp;&nbsp;&nbsp;&nbsp; <!--varmaan huonoa tyyliä, niin muuta, jos kerkeät-->
+        <td>{{ book.read }}</td>
+        <td>
+            <form method="POST" action="{{ url_for('books_set_read', book_id=book.id) }}">
+            <input type="submit" value="Change status!"/>
+            </form>
+        </td>
+      
+{% endblock %}
