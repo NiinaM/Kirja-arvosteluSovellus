@@ -2,6 +2,7 @@
 
 {% block body %}
 <form method="POST" action="{{ url_for('reviews_create') }}">
+  {{ form.book_id }}
   <table>
     <tr>
       <td>

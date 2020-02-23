@@ -8,6 +8,3 @@ class ReviewForm(FlaskForm):
 
     class Meta: 
         csrf = False
-
-    def __init__(self, book_id):
-        self.book_id = book_id
