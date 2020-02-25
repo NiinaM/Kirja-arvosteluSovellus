@@ -31,8 +31,6 @@ def books_set_read(book_id):
     db.session().commit()
   
     return redirect(url_for("book_view", book_id = book.id))
-    #voisi merkata itselleen luetuksi, muttei muille?
-    #toinen nappi, josta voi merkata lukemattomaksi -> samaan nappiin.
 
 @app.route("/books/", methods=["POST"])
 @login_required
@@ -70,7 +68,6 @@ def book_delete(book_id):
 
     return redirect(url_for("books_index"))
 
-#jokaiselle kirjalle oma sivu
 @app.route("/books/<book_id>", methods=["GET"])
 @login_required
 def book_view(book_id):
