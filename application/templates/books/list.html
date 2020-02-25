@@ -11,6 +11,11 @@
       <td>
         <a href="{{ url_for('book_view', book_id=book.id) }}" style="color: hotpink;">{{ book.name }}</a>
       </td>
+      <td>
+        <form method="POST" action="{{ url_for('book_delete', book_id=book.id) }}">
+            <input type="submit" value="Poista kirja!" />
+        </form>
+    </td>
     </tr>
     {% endfor %}
   </table>

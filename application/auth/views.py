@@ -1,10 +1,11 @@
 from flask import render_template, request, redirect, url_for
 from flask_login import login_user, logout_user
 
-from application import app, db
+from application import app, db, login_required
 from application.auth.models import User
 from application.auth.forms import LoginForm
 from application.auth.forms import SignInForm
+from application.books.models import Book
 
 @app.route("/auth/login", methods = ["GET", "POST"])
 def auth_login():
@@ -21,6 +22,8 @@ def auth_login():
 
 
     login_user(user)
+    #kokeiluprintti
+    print(user.read_books)
     return redirect(url_for("index")) 
 
 @app.route("/auth/logout")

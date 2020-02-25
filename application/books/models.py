@@ -3,8 +3,6 @@ from application.models import Base, Name
 #kirjan luokka
 class Book(Base, Name):
 
-    read = db.Column(db.Boolean, nullable=False)
-
     reviews = db.relationship("Review", backref='book', lazy=True)
 
     account_id = db.Column(db.Integer, db.ForeignKey('account.id'), nullable=False)

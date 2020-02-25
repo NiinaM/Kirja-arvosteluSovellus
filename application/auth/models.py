@@ -1,7 +1,14 @@
 from application import db
 from application.models import Base, Name
+from application.books.models import Book
 
 from sqlalchemy.sql import text
+
+#liitostaulu
+read_books = db.Table('read_books', Base.metadata,
+    db.Column('account_id', db.Integer, db.ForeignKey('account.id')),
+    db.Column('book_id', db.Integer, db.ForeignKey('book.id'))
+)
 
 class User(Base, Name):
 
@@ -12,6 +19,8 @@ class User(Base, Name):
 
     books = db.relationship("Book", backref='account', lazy=True)
     reviews = db.relationship("Review", backref='account', lazy=True)
+    #yhteys liitostauluun, niin että saa "napin" toimimaan oikein. Ei toimi oikein tällä hetkellä.
+    read_books = db.relationship("Book", secondary=read_books, lazy="subquery", backref="users")
 
     def __init__(self, name, username, password):
         self.name = name

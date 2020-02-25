@@ -28,3 +28,16 @@ def reviews_create():
     db.session().commit()
 
     return redirect(url_for("index"))
+
+@app.route("/reviews/delete/<review_id>", methods=["POST"])
+@login_required
+def review_delete(review_id):
+    review = Review.query.get(review_id)
+    #if book.account_id != current_user.id:
+        #lopullinen tekeminen päättämättä
+       # return login_manager.unauthorized()
+    
+    db.session.delete(review)
+    db.session.commit()
+
+    return redirect(url_for("books_index"))
