@@ -5,7 +5,6 @@ from application import app, db, login_required
 from application.auth.models import User
 from application.auth.forms import LoginForm
 from application.auth.forms import SignInForm
-from application.books.models import Book
 
 @app.route("/auth/login", methods = ["GET", "POST"])
 def auth_login():

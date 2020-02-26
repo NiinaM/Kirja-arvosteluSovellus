@@ -57,9 +57,9 @@ def books_create():
 @login_required
 def book_delete(book_id):
     book = Book.query.get(book_id)
-    #if book.account_id != current_user.id:
+    if book.account_id != current_user.id:
         #lopullinen tekeminen päättämättä
-       # return login_manager.unauthorized()
+        return render_template("books_index")
     
     if len(book.reviews)==0:
     #lisää viesti siitä, että kirjaa ei voi poistaa, koska sitä on arvosteltu.
