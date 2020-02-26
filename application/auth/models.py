@@ -19,7 +19,7 @@ class User(Base, Name):
 
     books = db.relationship("Book", backref='account', lazy=True)
     reviews = db.relationship("Review", backref='account', lazy=True)
-    #yhteys liitostauluun, niin että saa "napin" toimimaan oikein. Ei toimi oikein tällä hetkellä.
+    
     read_books = db.relationship("Book", secondary=read_books, lazy="subquery", backref="users")
 
     def __init__(self, name, username, password):
