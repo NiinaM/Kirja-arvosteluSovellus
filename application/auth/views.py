@@ -37,15 +37,18 @@ def auth_form():
 
 @app.route("/auth/", methods=["POST"])
 def auth_create():
-     form = SignInForm(request.form)
+    form = SignInForm(request.form)
 
     #Validointi pitäisi, jotenkin saada toimimaan niin, että se uudelleen ohjaa takaisin /auth/new.html!
     #if not form.validate():
         #return render_template("auth/new.html", form = form)
 
-     newUser = User(form.name.data, form.username.data, form.password.data)
-     
-     db.session().add(newUser)
-     db.session().commit()
+    new_user = User(form.name.data, form.username.data, form.password.data)
+ 
+    db.session().add(new_user)
+    db.session().commit()
 
-     return redirect(url_for("index"))
+    user = User.query.filter_by(username=new_user.username).first()
+    login_user(user)
+
+    return redirect(url_for("index"))
