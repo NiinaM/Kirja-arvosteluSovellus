@@ -12,9 +12,10 @@ def auth_login():
         return render_template("auth/loginform.html", form = LoginForm())
 
     form = LoginForm(request.form)
-    # mahdolliset validoinnit
+
 
     user = User.query.filter_by(username=form.username.data, password=form.password.data).first()
+
     if not user:
         return render_template("auth/loginform.html", form = form,
                                error = "Ei ole olemassa tällaista käyttäjää tai salasanaa.")
@@ -39,9 +40,8 @@ def auth_form():
 def auth_create():
     form = SignInForm(request.form)
 
-    #Validointi pitäisi, jotenkin saada toimimaan niin, että se uudelleen ohjaa takaisin /auth/new.html!
-    #if not form.validate():
-        #return render_template("auth/new.html", form = form)
+    if not form.validate():
+        return render_template("auth/new.html", form = form)
 
     new_user = User(form.name.data, form.username.data, form.password.data)
  

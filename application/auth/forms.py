@@ -1,5 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import PasswordField, StringField, validators, ValidationError
+from wtforms import PasswordField, StringField, validators
+from application.auth.models import User
   
 class LoginForm(FlaskForm):
     username = StringField("Käyttäjätunnus", [validators.length(min=3, max=15), validators.DataRequired()])
@@ -22,9 +23,11 @@ class SignInForm(FlaskForm):
         initial_validation = super(SignInForm, self). validate()
         if not initial_validation:
             return False
-        user = User.query.filter_by(user=self.username.data).first()
+        user = User.query.filter_by(username=self.username.data).first()
         if user:
-            raise ValidationError('Tämä käyttäjänimi on jo käytössä!')
+            self.username.errors.append("Käyttäjätunnus on jo olemassa!")
+            return False
+        return True
 
 
     class Meta:
