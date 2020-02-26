@@ -58,8 +58,7 @@ def books_create():
 def book_delete(book_id):
     book = Book.query.get(book_id)
     if book.account_id != current_user.id:
-        #lopullinen tekeminen päättämättä
-        return render_template("books_index")
+        return redirect(url_for("books_index"))
     
     if len(book.reviews)==0:
     #lisää viesti siitä, että kirjaa ei voi poistaa, koska sitä on arvosteltu.
@@ -80,3 +79,12 @@ def book_view(book_id):
         "books/book.html",
         book=book,
     )
+#Kirjan muokkaustoiminnallisuus. Kesken!
+#@app.route("/books/edit/<books_id", methods=["POST"])
+#@login_required
+#def book_edit(book_id):
+ #   book = Books.query.get(book_id)
+
+  #  if book.account_id != current_user.id:
+   #     return redirect(url_for("book_view", book_id = book.id)) 
+    
