@@ -91,22 +91,21 @@ def updating_book_view(book_id):
 
     return render_template("books/update.html", book_id = book_id, form = form)
 
-#Kirjan muokkaustoiminnallisuus. Kesken!
 @app.route("/books/update/<book_id>", methods=["POST"])
 @login_required
 def book_update(book_id):
     book_for_updating = Book.query.get(book_id)
     user = current_user
     form = BookUpdateForm(request.form)
-    updated_book_name = Book(form.updated_name.data)
+    updated_book_name = form.updated_name.data
 
     if not form.validate():
         return render_template("books/update.html", form = form)
 
-    if book_for_updating.account_id != current_user.id:
+    if book_for_updating.account_id != user.id:
         return redirect(url_for("book_view", book_id = book_id))
 
-    book_for_updating.name = updated_book_name.name
+    book_for_updating.name = updated_book_name
     db.session.commit()
     return redirect(url_for("book_view", book_id = book_id))
 

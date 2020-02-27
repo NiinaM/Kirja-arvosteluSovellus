@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<form method="POST" action="{{ url_for('review_update', review_id=review_id) }}">
+    <table>
+      <tr>
+        <td>
+          {{ form.rating.label }}
+        </td>
+        <td>
+          {{ form.rating }}
+        </td>
+        <td>
+          <ul>
+            {% for error in form.rating.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          {{ form.reviewText.label }}
+        </td>
+        <td>
+          {{ form.reviewText }}
+        </td>
+        <td>
+          <ul>
+            {% for error in form.reviewText.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+        </td>
+      </tr>
+        <td colspan="3">
+          <input type="submit" value="Muokkaa arvostelua!"/>
+        </td>
+      </tr>
+  </form>
+
+{% endblock %}
