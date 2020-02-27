@@ -8,3 +8,9 @@ class BookForm(FlaskForm):
     class Meta:
         #turvautuminen cross-site request forgery -hyökkäyksiä vastaan kytketään pois päältä.
         csrf = False
+
+class BookUpdateForm(FlaskForm):
+    updated_name = StringField("Muokkaa kirjan nimeä", [validators.length(min=3, max=30), validators.DataRequired()])
+
+    class Meta:
+        csrf = False

@@ -4,12 +4,13 @@ from flask_login import current_user
 from application import app, db, login_required
 from application.books.models import Book
 from application.books.forms import BookForm
+from application.books.forms import BookUpdateForm
 
 @app.route("/books", methods=["GET"])
 def books_index():
     return render_template("books/list.html", books = Book.query.all())
 
-@app.route("/books/new/")
+@app.route("/books/new/", methods=["GET"])
 @login_required
 def books_form():
     return render_template("books/new.html", form = BookForm())
@@ -79,12 +80,34 @@ def book_view(book_id):
         "books/book.html",
         book=book,
     )
-#Kirjan muokkaustoiminnallisuus. Kesken!
-#@app.route("/books/edit/<books_id", methods=["POST"])
-#@login_required
-#def book_edit(book_id):
- #   book = Books.query.get(book_id)
 
-  #  if book.account_id != current_user.id:
-   #     return redirect(url_for("book_view", book_id = book.id)) 
+@app.route("/books/update/<book_id>", methods=["GET"])
+@login_required
+def updating_book_view(book_id):
+    book = Book.query.get(book_id)
+    form = BookUpdateForm()
+    
+    form.updated_name.data = book.name
+
+    return render_template("books/update.html", book_id = book_id, form = form)
+
+#Kirjan muokkaustoiminnallisuus. Kesken!
+@app.route("/books/update/<book_id>", methods=["POST"])
+@login_required
+def book_update(book_id):
+    book_for_updating = Book.query.get(book_id)
+    user = current_user
+    form = BookUpdateForm(request.form)
+    updated_book_name = Book(form.updated_name.data)
+
+    if not form.validate():
+        return render_template("books/update.html", form = form)
+
+    if book_for_updating.account_id != current_user.id:
+        return redirect(url_for("book_view", book_id = book_id))
+
+    book_for_updating.name = updated_book_name.name
+    db.session.commit()
+    return redirect(url_for("book_view", book_id = book_id))
+
     

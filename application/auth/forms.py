@@ -13,8 +13,8 @@ class LoginForm(FlaskForm):
 class SignInForm(FlaskForm):
     name = StringField("Anna nimesi", [validators.length(min=3, max=15), validators.DataRequired()])
     username = StringField("Uusi käyttäjätunnus", [validators.length(min=3, max=15), validators.DataRequired()])
-    password = PasswordField("Uusi salasana", [validators.length(min=6, max=20), validators.DataRequired()])
-    confirm_password = PasswordField("Toista salasana", [validators.DataRequired(), validators.EqualTo('confirm_password', message='Salasanojen pitää täsmätä.')])
+    password = PasswordField("Uusi salasana", [validators.length(min=6, max=20), validators.DataRequired(), validators.EqualTo('confirm_password', message='Salasanojen pitää täsmätä.')])
+    confirm_password = PasswordField("Toista salasana", [validators.DataRequired(), validators.length(min=6, max=20)])
 
     def __init__(self, *args, **kwargs):
         super(SignInForm, self).__init__(*args, **kwargs)

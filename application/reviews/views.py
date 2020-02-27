@@ -5,7 +5,7 @@ from application import app, db
 from application.reviews.models import Review
 from application.reviews.forms import ReviewForm
 
-@app.route("/reviews/new")
+@app.route("/reviews/new", methods=["GET"])
 @login_required
 def reviews_form():
     book_id = request.args.get("book_id")
@@ -42,3 +42,5 @@ def review_delete(review_id):
     db.session.commit()
 
     return redirect(url_for("book_view", book_id = book_id))
+
+#@app.route("/reviews/edit/<review_id>", methods=[])
