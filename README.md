@@ -16,6 +16,8 @@ Sovelluksessa on vain yhdenlaisia käyttäjiä ja yksi valmiiksi luotu tunnus, j
 
 [Asennusohje](https://github.com/NiinaM/Kirja-arvosteluSovellus/blob/master/documentation/installingIntroduction.md)
 
+[Käyttöohje](https://github.com/NiinaM/Kirja-arvosteluSovellus/blob/master/documentation/usermanual.md)
+
 [Käyttötapauksia](https://github.com/NiinaM/Kirja-arvosteluSovellus/blob/master/documentation/userstory.md)
 
 [Heroku](https://kirjaarvostelusovellus.herokuapp.com/)
