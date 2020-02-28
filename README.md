@@ -9,7 +9,7 @@ Sovelluksessa voi arvostella kirjoja. Käyttäjä luo käyttäjän ja voi lisät
 * salasana : Salasana1
 * Huom: Sovelluksessa toimii myös uuden tunnuksen luominen.
 
-![Tietokantakaavio](https://github.com/NiinaM/Kirja-arvosteluSovellus/blob/master/documentation/Tietokantakaavio%202.jpg)
+![Tietokantakaavio](https://github.com/NiinaM/Kirja-arvosteluSovellus/blob/master/documentation/Lopullinen%20tietokantakaavio.jpg)
 
 
 ### Linkkejä
