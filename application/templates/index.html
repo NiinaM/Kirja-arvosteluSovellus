@@ -6,14 +6,15 @@
 </p>
 
 {% if how_many_books %}
-<p style="text-align: center;">
+<p style="text-align: center; color: darkslateblue;">
   Montako kirjaa jokainen käyttäjä on lukenut:
 </p>
+<p style="text-align: center; color: darkorchid;">Käyttäjä : luettujen kirjojen määrä</p>
 
-<ul style="text-align: center; list-style-type: none;">
+<ul style="text-align: center; list-style-type: none; color: darkorchid;">
   {% for user in how_many_books %}
   <li>
-    {{user.name}} {{user.count}}
+    {{user.name}} : {{user.count}}
   </li>
   {% endfor %}
 </ul>
