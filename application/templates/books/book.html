@@ -2,8 +2,6 @@
 
 {% block body %}
 <h3 style="color:rgb(100, 89, 160)">{{ book.name }}</h3>
-<br />
-<br />
 {% if book.account_id == current_user.id %}
 <a style="color: hotpink;" href="{{ url_for('updating_book_view', book_id=book.id) }}">Muuta kirjan tietoja.</a>
 {% endif %}

@@ -42,14 +42,14 @@ def books_create():
     if not form.validate():
         return render_template("books/new.html", form = form)
 
-    t = Book(form.name.data)
-    t.read = form.read.data
-    t.account_id = current_user.id
+    book = Book(form.name.data)
+    book.read = form.read.data
+    book.account_id = current_user.id
 
-    if t.read:
-        user.read_books.append(t)
+    if book.read:
+        user.read_books.append(book)
 
-    db.session().add(t)
+    db.session().add(book)
     db.session().commit()
 
     return redirect(url_for("books_index"))
