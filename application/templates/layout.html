@@ -24,11 +24,12 @@
         </ul>
         <div class="form-inline mt-2 mt-md-0">
           {% if current_user.is_authenticated %}
-          <a href="{{ url_for('auth_logout') }}">Hei {{ current_user.name }}! Tästä voit kirjautua ulos.</a>
+          <a href="{{ url_for('auth_logout') }}">Hei {{ current_user.name }} kirjaudu ulos!</a>
           {% else %}
           <a href="{{ url_for('auth_login') }}">Kirjaudu</a>
+          <a class="nav-link" href="{{ url_for('auth_form') }}">Rekisteröidy</a>
           {% endif %}
-          <a class="nav-link" href="{{ url_for('auth_form') }}">Luo uusi tunnus</a>
+
         </div>
       </div>
     </nav>

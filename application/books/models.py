@@ -29,6 +29,8 @@ class Book(Base, Name):
 
             if not row[2]:
                 avg = ""
+            else:
+                avg = '{0:.1f}'.format(row[2])
             response.append({"id":id, "name":name, "avg":avg})
 
         return response
