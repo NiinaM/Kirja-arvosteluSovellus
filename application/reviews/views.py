@@ -22,7 +22,8 @@ def reviews_create():
     form = ReviewForm(request.form)
 
     if not form.validate():
-        return render_template("reviews/new.html", form = form)
+        book = Book.query.get(form.book_id.data)
+        return render_template("reviews/new.html", form = form, book = book)
 
     newReview = Review(form.rating.data, form.reviewText.data, form.book_id.data, current_user.id)
     
