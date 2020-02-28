@@ -27,7 +27,7 @@ def reviews_create():
     db.session().add(newReview)
     db.session().commit()
 
-    return redirect(url_for("index"))
+    return redirect(url_for("book_view", book_id = form.book_id.data))
 
 @app.route("/reviews/delete/<review_id>", methods=["POST"])
 @login_required

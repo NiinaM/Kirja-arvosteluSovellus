@@ -1,39 +1,46 @@
 {% extends "layout.html" %}
 
 {% block body %}
-    <h3 style="color:rgb(98, 89, 160)">{{ book.name }}</h3>
-    <br />
-    <br />
-    <a href="{{ url_for('reviews_form', book_id=book.id) }}">Kirjoita arvostelu.</a>
-    <a href="{{ url_for('updating_book_view', book_id=book.id) }}">Muuta kirjan tietoja.</a>
-    <table>
-        <tbody>
-            <tr>
-                <td>
-                    <form method="POST" action="{{ url_for('books_set_read', book_id=book.id) }}">
-                        <input type="submit" value="Oletko lukenut kirjan?" />
-                    </form>
-                </td>
-                <td>
-                    {% if book.read %}
-                        Luettu
-                    {% else %}
-                        Lukematta
-                    {% endif %}
-                </td>
-                <td>
-                    <ul>
-                        {% for review in book.reviews %}
-                        <li>{{ review.rating }}: {{ review.review_text }}</li>
-                        <form method="POST" action="{{ url_for('review_delete', review_id=review.id) }}">
-                            <a href="{{ url_for('updating_review_view', review_id=review.id) }}">Muokkaa arvostelua.</a>
-                            <input type="submit" value="Poista arvostelu!" />
-                        </form>
-                        {% endfor %}
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-      
+<h3 style="color:rgb(100, 89, 160)">{{ book.name }}</h3>
+<br />
+<br />
+{% if book.account_id == current_user.id %}
+<a style="color: hotpink;" href="{{ url_for('updating_book_view', book_id=book.id) }}">Muuta kirjan tietoja.</a>
+{% endif %}
+<table>
+    <tbody>
+        <tr>
+            <td style="padding-top: 16px;">
+                <form method="POST" action="{{ url_for('books_set_read', book_id=book.id) }}">
+                    <input style="color: darkmagenta; background-color: rgb(144, 133, 211);" type="submit"
+                        value="Oletko lukenut kirjan?" />
+                </form>
+            </td>
+            <td style="font-size: 20pt; color: indigo;">
+                {% if book.read %}
+                &#9745;
+                {% else %}
+                &#9744;
+                {% endif %}
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p style="font-size: 16pt; padding-top: 20px; color: rgb(133, 21, 133);">Arvostelut</p>
+<a style="color: hotpink;" href="{{ url_for('reviews_form', book_id=book.id) }}">Kirjoita arvostelu.</a>
+<ul style="list-style-type: none;">
+    {% for review in book.reviews %}
+    <li style="color: rgb(4, 46, 88); padding-top: 16px;">arvosana: {{ review.rating }}</li>
+    <li >{{ review.review_text }}</li>
+    {% if review.account_id == current_user.id %}
+    <form method="POST" action="{{ url_for('review_delete', review_id=review.id) }}">
+        <input style="color: darkmagenta; background-color: rgb(144, 133, 211);" type="submit"
+            value="Poista arvostelu!" />
+        <a style="color: hotpink;" href="{{ url_for('updating_review_view', review_id=review.id) }}">Muokkaa
+            arvostelua.</a>
+    </form>
+    {% endif %}
+    {% endfor %}
+</ul>
+
 {% endblock %}
