@@ -3,13 +3,17 @@
 {% block body %}
   <table>
     <tr>
-      <th style="font-size: 20pt; color: darkviolet;">Kirjat</th>
+      <th style="font-size: 15pt; color: darkviolet;">Kirjat</th>
+      <th style="font-size: 15pt; color: darkviolet;">Keskiarvo</th>
       <th></th>
     </tr>
     {% for book in books %}
     <tr>
       <td>
         <a href="{{ url_for('book_view', book_id=book.id) }}" style="color: hotpink;">{{ book.name }}</a>
+      </td>
+      <td>
+        {{ book.avg }}
       </td>
       <td>
         <form method="POST" action="{{ url_for('book_delete', book_id=book.id) }}">

@@ -23,7 +23,12 @@ class Book(Base, Name):
 
         response = []
         for row in results:
-            print(row)
-            response.append({"id":row[0], "name":row[1], "avg":row[2]})
+            id = row[0]
+            name = row[1]
+            avg = row[2]
+
+            if not row[2]:
+                avg = ""
+            response.append({"id":id, "name":name, "avg":avg})
 
         return response

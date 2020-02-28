@@ -8,8 +8,7 @@ from application.books.forms import BookUpdateForm
 
 @app.route("/books", methods=["GET"])
 def books_index():
-    Book.average_rating_of_book()
-    return render_template("books/list.html", books = Book.query.all())
+    return render_template("books/list.html", books = Book.average_rating_of_book())
 
 @app.route("/books/new/", methods=["GET"])
 @login_required

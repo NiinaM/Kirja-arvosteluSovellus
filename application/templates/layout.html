@@ -21,9 +21,6 @@
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('books_form') }} ">Lisää kirja</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('auth_form') }}">Luo uusi tunnus</a>
-          </li>
         </ul>
         <div class="form-inline mt-2 mt-md-0">
           {% if current_user.is_authenticated %}
@@ -31,6 +28,7 @@
           {% else %}
           <a href="{{ url_for('auth_login') }}">Kirjaudu</a>
           {% endif %}
+          <a class="nav-link" href="{{ url_for('auth_form') }}">Luo uusi tunnus</a>
         </div>
       </div>
     </nav>
