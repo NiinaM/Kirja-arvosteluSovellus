@@ -1,12 +1,11 @@
 ## Käyttötapauksia
 
 
-### SQLalchemyn generoimat tietokantakyselyt
+#### SQLalchemyn generoimat tietokantakyselyt
 - [x] Kuka vain voi luoda käyttäjätunnuksen.
 ```
 INSERT INTO account (date_created, date_modified, name, username, password) 
 VALUES (CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, ?, ?, ?)
-
 ```
 - [x] Käyttäjä voi kirjautua sisään.
 ```
@@ -16,7 +15,6 @@ account.username AS account_username, account.password AS account_password
 FROM account 
 WHERE account.password = ? AND account.username = ?
 LIMIT ? OFFSET ?
-
 ```
 - [x] Käyttäjä voi kirjautua ulos.
 ```
@@ -25,7 +23,6 @@ account.date_modified AS account_date_modified, account.name AS account_name,
 account.username AS account_username, account.password AS account_password 
 FROM account 
 WHERE account.id = ?
-
 ```
 - [x] Käyttäjänä voin lisätä kirjan.
 ```
@@ -63,7 +60,7 @@ INSERT INTO read_books (account_id, book_id) VALUES (?, ?)
 ```
 DELETE FROM read_books WHERE read_books.account_id = ? AND read_books.book_id = ?
 ```
-### Itsetehdyt tietokantakyselyt
+#### Itsetehdyt tietokantakyselyt
 - [x] Kuka vain näkee etusivulla koosteen käyttäjien lukemien kirjojen määrästä.
 ```
 "SELECT Account.id, Account.name, COUNT(Read_books.book_id) FROM Account "
