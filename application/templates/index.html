@@ -2,18 +2,18 @@
 
 {% block body %}
 <p>
-  Tervetuloa!
+  Tervetuloa lukemaan ja arvostelemaan kirjoja!
 </p>
 
-{% if needs_books is defined %}
+{% if how_many_books %}
 <p>
-  The following users have lot of free time because they have no books to read:
+  Montako kirjaa kukakin käyttäjä on lukenut.
 </p>
 
 <ul>
-  {% for user in needs_books %}
+  {% for user in how_many_books %}
   <li>
-    {{user.id}} {{user.name}}
+    {{user.name}} {{user.count}}
   </li>
   {% endfor %}
 </ul>

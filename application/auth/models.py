@@ -44,18 +44,15 @@ class User(Base, Name):
         #tällä hetkellä kaikki käyttäjät voivat muokata kaikkea
         #sellainen rooli kaikille, että he voivat muokata omia tekemisiään mutteivät muiden?
 
-    #yhteenvetokyselyt pitäisi saada toimimaan herokussa!!!
-    #@staticmethod
-    #def find_users_with_nothing_to_read(read=0):
-      #  stmt = text("SELECT Account.id, Account.name FROM Account"
-       #              " LEFT JOIN Book ON Book.account_id = Account.id"
-        #             " WHERE (Book.read IS null OR Book.read = :read)"
-         #            " GROUP BY Account.id"
-          #           " HAVING COUNT(Book.id) = 0").params(read=read)
-        #res = db.engine.execute(stmt)
+    @staticmethod
+    def how_many_books_have_different_users_read():
+        stmt = text("SELECT Account.id, Account.name, COUNT(Read_books.book_id) FROM Account "
+                    "LEFT JOIN Read_books ON Read_books.account_id = Account.id "
+                    "GROUP BY Account.id")
+        results = db.engine.execute(stmt)
 
-        #response = []
-        #for row in res:
-         #   response.append({"id":row[0], "name":row[1]})
+        response = []
+        for row in results:
+            response.append({"id":row[0], "name":row[1], "count":row[2]})
 
-        #return response
+        return response
