@@ -62,7 +62,6 @@ def book_delete(book_id):
         return redirect(url_for("books_index"))
     
     if len(book.reviews)==0:
-    #lisää viesti siitä, että kirjaa ei voi poistaa, koska sitä on arvosteltu.
         db.session.delete(book)
         db.session.commit()
 

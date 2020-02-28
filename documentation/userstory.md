@@ -11,7 +11,17 @@
 - [x] Käyttäjänä voin merkitä minkä hyvänsä kirjan lukemattomaksi.
 - [x] Kuka vain voi luoda käyttäjätunnuksen.
 - [x] Kuka vain näkee etusivulla koosteen käyttäjien lukemien kirjojen määrästä.
+```
+"SELECT Account.id, Account.name, COUNT(Read_books.book_id) FROM Account "
+"LEFT JOIN Read_books ON Read_books.account_id = Account.id "
+"GROUP BY Account.id"
+```
 - [x] Kuka vain näkee kaikkien kirjojen keskiarvollisen arvosanan.
+```
+"SELECT Book.id, Book.name, AVG(Review.rating) FROM Book "
+"LEFT JOIN Review ON Review.book_id = Book.id "
+"GROUP BY Book.id "
+```
 - [x] Kuka vain näkee listan kaikista sivulla olevista kirjoista.
 
 ### Tekemättä jääneet käyttötapaukset

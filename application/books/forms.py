@@ -6,7 +6,6 @@ class BookForm(FlaskForm):
     read = BooleanField("Luettu")
 
     class Meta:
-        #turvautuminen cross-site request forgery -hyökkäyksiä vastaan kytketään pois päältä.
         csrf = False
 
 class BookUpdateForm(FlaskForm):

@@ -1,5 +1,6 @@
 ### Jatkokehitysideoita
 
+* Automaattisen testaamisen lisääminen!
 * Olisi kiva, jos sovelluksessa olisi kirjailija luokka. Tällöin voisi kirjoja jaotella kirjailijoiden mukaan.
 * Kirjalla voisi olla julkaisuvuosi. Sen avulla voisi esim. järjestää kirjoja. 
 * Olisi kiva, jos kirjoja olisi järjestetty vaikkapa aakkosjärjestykseen.

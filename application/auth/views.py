@@ -22,8 +22,7 @@ def auth_login():
 
 
     login_user(user)
-    #kokeiluprintti
-    print(user.read_books)
+    
     return redirect(url_for("index")) 
 
 @app.route("/auth/logout")
@@ -31,7 +30,6 @@ def auth_logout():
     logout_user()
     return redirect(url_for("index"))  
 
-#Salasanan järkevä luominen puuttuu vielä!
 @app.route("/auth/new/")
 def auth_form():
     return render_template("auth/new.html", form = SignInForm())

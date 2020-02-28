@@ -16,7 +16,6 @@ class User(Base, Name):
     username = db.Column(db.String(144), nullable=False)
     password = db.Column(db.String(144), nullable=False)
 
-    #pois????
     books = db.relationship("Book", backref='account', lazy=True)
     reviews = db.relationship("Review", backref='account', lazy=True)
     
@@ -41,8 +40,6 @@ class User(Base, Name):
 
     def roles(self):
         return["ADMIN"]
-        #tällä hetkellä kaikki käyttäjät voivat muokata kaikkea
-        #sellainen rooli kaikille, että he voivat muokata omia tekemisiään mutteivät muiden?
 
     @staticmethod
     def how_many_books_have_different_users_read():

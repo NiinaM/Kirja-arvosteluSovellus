@@ -9,7 +9,6 @@ class LoginForm(FlaskForm):
     class Meta:
         csrf = False
 
-#uusien käyttäjien tekemiseen
 class SignInForm(FlaskForm):
     name = StringField("Anna nimesi", [validators.length(min=3, max=15), validators.DataRequired()])
     username = StringField("Uusi käyttäjätunnus", [validators.length(min=3, max=15), validators.DataRequired()])

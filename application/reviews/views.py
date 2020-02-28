@@ -35,7 +35,6 @@ def review_delete(review_id):
     review = Review.query.get(review_id)
     book_id = review.book_id
     if review.account_id != current_user.id:
-        #Ehkä jokin viesti siitä, ettei arvostelua voi poistaa, koska joku muu on sen kirjoittanut tai edes paluu samaa näkymää 
         return redirect(url_for("book_view", book_id = book_id))
     
     db.session.delete(review)
