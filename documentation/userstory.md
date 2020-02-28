@@ -3,10 +3,17 @@
 - [x] Käyttäjänä voin lisätä kirjan.
 - [x] Käyttäjänä voin poistaa itse lisäämäni kirjan, jossa ei ole arvostelua.
 - [x] Käyttäjänä voin arvostella, minkä hyvänsä kirjan.
-- [x] Käyttäjän voin poistaa itse tekemäni arvostelun.
-- [] Käyttäjänä voin listata kirjat tekijän mukaan.
-- [x] Käyttäjänä voin muokata lisäämäni kirjan tietoja.
-- [x] Käyttäjänä voin muokata kirjoittamaani arvostelua.
+- [x] Käyttäjänä voin poistaa itse tekemäni arvostelun.
+- [x] Käyttäjänä voin muokata lisäämäni kirjan nimeä.
+- [x] Käyttäjänä voin muokata kirjoittamani arvostelun arvosanaa.
+- [x] Käyttäjänä voin muokata kirjoittamani arvostelun tekstiosaa.
 - [x] Käyttäjänä voin merkitä minkä hyvänsä kirjan luetuksi.
+- [x] Käyttäjänä voin merkitä minkä hyvänsä kirjan lukemattomaksi.
 - [x] Voin luoda käyttäjätunnuksen itselleni.
-- [] Käyttäjänä voin selata lukemiani kirjoja.
+- [x] Kuka vain näkee etusivulla koosteen käyttäjien lukemien kirjojen määrästä.
+- [x] Kuka vain näkee kaikkien kirjojen keskiarvollisen arvosanan.
+- [x] Kuka vain näkee listan kaikista sivulla olevista kirjoista.
+
+### Tekemättä jääneet käyttötapaukset
+* Käyttäjänä voin listata kirjat tekijän mukaan.
+* Käyttäjänä voin selata lukemiani kirjoja.
