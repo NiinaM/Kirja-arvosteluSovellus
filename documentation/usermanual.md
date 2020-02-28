@@ -5,7 +5,7 @@
 
 ## Kirjautuneet käyttäjät
 ### Etusivu
-* Etusivulle päätyy, kun kirjautuu sisään, kun luo uuden tunnuksen, kun kirjautuu ulos ja jos painaa "Kirja-arvosteluja"-linkkiä.
+* Etusivulle päätyy, kun kirjautuu sisään, kun luo uuden tunnuksen, kun kirjautuu ulos tai jos painaa "Kirja-arvosteluja"-linkkiä.
 * Näkevät listan kaikkien käyttäjien lukemien kirjojen määristä sekä tervetuloa toivotuksen.
 
 ### Kirjalista
