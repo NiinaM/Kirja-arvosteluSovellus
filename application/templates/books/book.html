@@ -8,7 +8,7 @@
 <table>
     <tbody>
         <tr>
-            {% if current_user.is_authenticated and book.account_id == current_user.id %}
+            {% if current_user.is_authenticated and book.account_id == current_user.id and number_of_reviews == 0 %}
       <td style="padding-top: 16px;">
         <form method="POST" action="{{ url_for('book_delete', book_id=book.id) }}">
             <input style="color: darkmagenta; background-color: rgb(144, 133, 211);" type="submit" value="Poista kirja!" />

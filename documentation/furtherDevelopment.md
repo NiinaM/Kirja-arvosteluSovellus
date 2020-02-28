@@ -7,3 +7,4 @@
 * Olisi kiva myös, jos voisi listata erikseen luetut ja lukemattomat kirjat.
 * Admin olisi hyvä olla, jos sovellus olisi oikeasti käytössä, koska tällä tavalla voidaan moderoida kirjoitettuja kommentteja sekä kirjannimiä.
 * Salasanat pitäisi salata oikein! Nyt niitä ei ole salattu lainkaan.
+* Arvostelun kirjoittamisen onnistuminen vain, jos kirjan on lukenut voisi olla hyvä lisäys/muutos.

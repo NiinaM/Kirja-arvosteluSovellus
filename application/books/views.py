@@ -80,6 +80,7 @@ def book_view(book_id):
     return render_template(
         "books/book.html",
         book=book,
+        number_of_reviews = len(book.reviews),
     )
 
 @app.route("/books/update/<book_id>", methods=["GET"])

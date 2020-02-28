@@ -4,15 +4,17 @@ from flask_login import login_required, current_user
 from application import app, db
 from application.reviews.models import Review
 from application.reviews.forms import ReviewForm
+from application.books.models import Book
 
 @app.route("/reviews/new", methods=["GET"])
 @login_required
 def reviews_form():
     book_id = request.args.get("book_id")
+    book = Book.query.get(book_id)
     form = ReviewForm()
     form.book_id.data = book_id
 
-    return render_template("reviews/new.html", form = form)
+    return render_template("reviews/new.html", form = form, book = book)
 
 @app.route("/reviews", methods=["POST"])
 @login_required
