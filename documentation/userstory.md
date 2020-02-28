@@ -9,7 +9,7 @@
 - [x] Käyttäjänä voin muokata kirjoittamani arvostelun tekstiosaa.
 - [x] Käyttäjänä voin merkitä minkä hyvänsä kirjan luetuksi.
 - [x] Käyttäjänä voin merkitä minkä hyvänsä kirjan lukemattomaksi.
-- [x] Voin luoda käyttäjätunnuksen itselleni.
+- [x] Kuka vain voi luoda käyttäjätunnuksen.
 - [x] Kuka vain näkee etusivulla koosteen käyttäjien lukemien kirjojen määrästä.
 - [x] Kuka vain näkee kaikkien kirjojen keskiarvollisen arvosanan.
 - [x] Kuka vain näkee listan kaikista sivulla olevista kirjoista.
