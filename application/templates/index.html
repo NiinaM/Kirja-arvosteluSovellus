@@ -1,16 +1,16 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<p>
+<p style="font-size: 20pt; color: rgb(9, 24, 70); text-align: center;">
   Tervetuloa lukemaan ja arvostelemaan kirjoja!
 </p>
 
 {% if how_many_books %}
-<p>
-  Montako kirjaa kukakin käyttäjä on lukenut.
+<p style="text-align: center;">
+  Montako kirjaa jokainen käyttäjä on lukenut:
 </p>
 
-<ul>
+<ul style="text-align: center; list-style-type: none;">
   {% for user in how_many_books %}
   <li>
     {{user.name}} {{user.count}}

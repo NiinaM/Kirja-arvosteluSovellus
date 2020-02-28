@@ -12,15 +12,15 @@ Sovelluksessa on vain yhdenlaisia käyttäjiä ja yksi valmiiksi luotu tunnus, j
 ![Tietokantakaavio](https://github.com/NiinaM/Kirja-arvosteluSovellus/blob/master/documentation/Lopullinen%20tietokantakaavio.jpg)
 
 
-## Linkkejä
+## [Linkkejä dokumentaatioon](https://github.com/NiinaM/Kirja-arvosteluSovellus/tree/master/documentation)
 
 [Käyttötapauksia](https://github.com/NiinaM/Kirja-arvosteluSovellus/blob/master/documentation/userstory.md)
-
-[Dokumentaatio](https://github.com/NiinaM/Kirja-arvosteluSovellus/tree/master/documentation)
 
 [Heroku](https://kirjaarvostelusovellus.herokuapp.com/)
 
 [Asennusohje](https://github.com/NiinaM/Kirja-arvosteluSovellus/blob/master/documentation/installingIntroduction.md)
+
+[Jatkokehitysideoita](https://github.com/NiinaM/Kirja-arvosteluSovellus/blob/master/documentation/furtherDevelopment.md)
 
 ## Käyttöohje
 

@@ -3,8 +3,8 @@
 {% block body %}
   <table>
     <tr>
-      <th style="font-size: 15pt; color: darkviolet;">Kirjat</th>
-      <th style="font-size: 15pt; color: darkviolet;">Keskiarvo</th>
+      <th style="font-size: 13pt; color: darkviolet;">Kirjat</th>
+      <th style="font-size: 13pt; color: darkviolet;">Keskiarvo</th>
       <th></th>
     </tr>
     {% for book in books %}
@@ -15,11 +15,13 @@
       <td>
         {{ book.avg }}
       </td>
+      {% if current_user.is_authenticated %}
       <td>
         <form method="POST" action="{{ url_for('book_delete', book_id=book.id) }}">
             <input type="submit" value="Poista kirja!" />
         </form>
     </td>
+    {% endif %}
     </tr>
     {% endfor %}
   </table>
