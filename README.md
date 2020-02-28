@@ -24,4 +24,44 @@ Sovelluksessa on vain yhdenlaisia käyttäjiä ja yksi valmiiksi luotu tunnus, j
 
 [Jatkokehitysideoita](https://github.com/NiinaM/Kirja-arvosteluSovellus/blob/master/documentation/furtherDevelopment.md)
 
+## Tietokantataulut
 
+```
+CREATE TABLE account (
+	id INTEGER NOT NULL, 
+	date_created DATETIME, 
+	date_modified DATETIME, 
+	name VARCHAR(144) NOT NULL, 
+	username VARCHAR(144) NOT NULL, 
+	password VARCHAR(144) NOT NULL, 
+	PRIMARY KEY (id)
+)
+CREATE TABLE book (
+	id INTEGER NOT NULL, 
+	date_created DATETIME, 
+	date_modified DATETIME, 
+	name VARCHAR(144) NOT NULL, 
+	account_id INTEGER NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(account_id) REFERENCES account (id)
+)
+CREATE TABLE review (
+	id INTEGER NOT NULL, 
+	date_created DATETIME, 
+	date_modified DATETIME, 
+	rating INTEGER NOT NULL, 
+	review_text VARCHAR(144) NOT NULL, 
+	account_id INTEGER NOT NULL, 
+	book_id INTEGER NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(account_id) REFERENCES account (id), 
+	FOREIGN KEY(book_id) REFERENCES book (id)
+)
+CREATE TABLE read_books (
+	account_id INTEGER, 
+	book_id INTEGER, 
+	FOREIGN KEY(account_id) REFERENCES account (id), 
+	FOREIGN KEY(book_id) REFERENCES book (id)
+)
+
+```
