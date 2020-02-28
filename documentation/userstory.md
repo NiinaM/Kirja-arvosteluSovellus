@@ -1,5 +1,7 @@
 ## Käyttötapauksia
 
+
+### SQLalchemyn generoimat
 - [x] Kuka vain voi luoda käyttäjätunnuksen.
 ```
 INSERT INTO account (date_created, date_modified, name, username, password) VALUES (CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, ?, ?, ?)
@@ -54,6 +56,7 @@ INSERT INTO read_books (account_id, book_id) VALUES (?, ?)
 ```
 DELETE FROM read_books WHERE read_books.account_id = ? AND read_books.book_id = ?
 ```
+### Itsetehdyt
 - [x] Kuka vain näkee etusivulla koosteen käyttäjien lukemien kirjojen määrästä.
 ```
 "SELECT Account.id, Account.name, COUNT(Read_books.book_id) FROM Account "
