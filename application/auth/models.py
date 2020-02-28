@@ -4,7 +4,6 @@ from application.books.models import Book
 
 from sqlalchemy.sql import text
 
-#liitostaulu
 read_books = db.Table('read_books', Base.metadata,
     db.Column('account_id', db.Integer, db.ForeignKey('account.id')),
     db.Column('book_id', db.Integer, db.ForeignKey('book.id'))
@@ -17,6 +16,7 @@ class User(Base, Name):
     username = db.Column(db.String(144), nullable=False)
     password = db.Column(db.String(144), nullable=False)
 
+    #pois????
     books = db.relationship("Book", backref='account', lazy=True)
     reviews = db.relationship("Review", backref='account', lazy=True)
     
