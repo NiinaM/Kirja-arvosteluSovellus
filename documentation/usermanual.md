@@ -27,6 +27,6 @@
 * Sivulle pääsee painamalla yläpalkin "Lisää kirja"-linkkiä. Linkki näkyy vain kirjautuneelle käyttäjälle.
 * Täällä voi antaa kirjalle nimen ja merkata kirjan luetuksi. Kirjan luodaan, kun painaa nappia "Lisää uusi kirja"
 
-### Kirjautumattomat käyttäjät
+## Kirjautumattomat käyttäjät
 * Kirjautumattomat käyttäjät voivat nähdä etusivun listan kaikkien käyttäjien lukemien kirjojen määristä.
 * Painamalla linkistä "Listaa kirjat" he pääsevät myös näkemään listan kirjoista ja niiden arvosanojen keskiarvot.

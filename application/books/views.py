@@ -64,6 +64,8 @@ def book_delete(book_id):
     if len(book.reviews)==0:
         db.session.delete(book)
         db.session.commit()
+    else:
+        return redirect(url_for("book_view", book_id = book_id))
 
     return redirect(url_for("books_index"))
 
@@ -99,7 +101,7 @@ def book_update(book_id):
     updated_book_name = form.updated_name.data
 
     if not form.validate():
-        return render_template("books/update.html", form = form)
+        return render_template("books/update.html", book_id = book_id, form = form)
 
     if book_for_updating.account_id != user.id:
         return redirect(url_for("book_view", book_id = book_id))

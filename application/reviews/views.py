@@ -65,7 +65,7 @@ def review_update(review_id):
     updated_review_text = form.reviewText.data
     
     if not form.validate():
-        return render_template("reviews/update.html", form = form)
+        return render_template("reviews/update.html", review_id = review_id, form = form)
 
     if review_for_updating.account_id != user.id:
         return redirect(url_for("updating_review_view", review_id = review_id))
