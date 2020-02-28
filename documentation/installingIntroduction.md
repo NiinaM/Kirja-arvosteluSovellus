@@ -1,11 +1,11 @@
 # Asennusohje
 
-## Aluksi asenna
+### Asenna nämä ennen kumpaakin tapaa käyttää sovellusta
 * pythonin 3 jokin versio
 * pip
 * sqlite3
 
-## Sovellus toimimaan paikallisesti
+### Sovellus toimimaan paikallisesti
 
 * Ensin lataa tai kloonaa projektin repositorio githubista.
 * Sitten luo ja aktivoi virtuaaliympäristö `venv`.
@@ -19,7 +19,7 @@
 
 * Sovelluksen paikallista testiversiota voi käyttää osoitteessa http://localhost:5000.
 
-## Sovellus toimimaan Herokussa
+### Sovellus toimimaan Herokussa
 
 * Asenna ensin Herokun CLI-työkalut.
 * Aja sitten komentoriviltä projektin kansiosssa `heroku create <nimi>` luodaksesi näin projektin Herokuun.

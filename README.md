@@ -20,15 +20,9 @@ Sovelluksessa on vain yhdenlaisia käyttäjiä ja yksi valmiiksi luotu tunnus, j
 
 [Heroku](https://kirjaarvostelusovellus.herokuapp.com/)
 
-
-## Asennusohje
-
-1. Lataa repositorio tai kloonaa se
-2. Asenna tarvittavat riippuvuudet: 
-    ```pip install requirements.txt```
-3. Aja ohjelma komennolla: ```python run.py```
+[Asennusohje](https://github.com/NiinaM/Kirja-arvosteluSovellus/blob/master/documentation/installingIntroduction.md)
 
 ## Käyttöohje
 
 * Sovelluksessa voi luoda käyttäjän painamalla "Luo uusi tunnus"-linkkiä ja kirjautua voi painamalla "Kirjaudu"-linkkiä. Ulos voi kirjautua painamalla uloskirjautumislinkkiä.
-* Sovelluksessa olevat kirjat näkee "Listaa kirjat"- linkin kautta ja sovellukseen voi luoda uuden kirjan "Lisää kirja"- linkin kautta. 
+* Sovelluksessa olevat kirjat näkee "Listaa kirjat"- linkin kautta ja sovellukseen voi luoda uuden kirjan "Lisää kirja"- linkin kautta.

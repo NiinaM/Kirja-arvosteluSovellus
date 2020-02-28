@@ -16,10 +16,9 @@ class Book(Base, Name):
     
     @staticmethod
     def average_rating_of_book():
-        stmt = text("SELECT Book.id, Book.name, Review.rating FROM Book "
+        stmt = text("SELECT Book.id, Book.name, AVG(Review.rating) FROM Book "
                     "LEFT JOIN Review ON Review.book_id = Book.id "
-                    "GROUP BY Book.id "
-                    "AVG()")
+                    "GROUP BY Book.id ")
         results = db.engine.execute(stmt)
 
         response = []
